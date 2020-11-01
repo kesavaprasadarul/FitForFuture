@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/containerScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/containerCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_content_half"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:id="@+id/containerLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_content_half">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/certHeaderImage"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvInfoLine1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/cert_header" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvInfoLine1"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="@string/info_cert_line_1"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/testResultRecyclerView1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/certHeaderImage" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/testResultRecyclerView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_content_half"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintBottom_toTopOf="@id/testResultRecyclerView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvInfoLine1" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/testResultRecyclerView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_content_half"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/testResultRecyclerView1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSignOff"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="end"
+                android:text="@string/cert_sign_off"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/testResultRecyclerView2" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.core.widget.NestedScrollView>

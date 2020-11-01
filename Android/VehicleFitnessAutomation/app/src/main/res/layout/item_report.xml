@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/margin_content_half"
+    android:weightSum="1">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTestName"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".6"
+        android:gravity="start|center_vertical"
+        tools:text="Test Name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTestResult"
+        style="@style/TextAppearance.MaterialComponents.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".4"
+        android:gravity="start|center_vertical"
+        android:lines="1"
+        app:textAllCaps="true"
+        tools:text="Pass" />
+
+</LinearLayout>

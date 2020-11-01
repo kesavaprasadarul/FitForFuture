@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.bosch.vaehiclefitness"
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias pz_keyAlias
+            keyPassword pz_keyPassword
+            storeFile new File(pz_storeFile)
+            storePassword pz_storePassword
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    // AndroidX Dependencies
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation "androidx.activity:activity:1.1.0"
+    implementation "androidx.fragment:fragment:1.2.5"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    // AndroidX Lifecycle Components
+    def lifecycle_version = "2.2.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+    // Retrofit & OkHttp3
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.1.0'
+
+    // Material Design Dependencies
+    implementation 'com.google.android.material:material:1.2.1'
+
+}

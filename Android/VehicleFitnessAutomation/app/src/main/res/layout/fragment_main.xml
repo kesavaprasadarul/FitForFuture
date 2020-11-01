@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="25dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="25dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStartOfficialTest"
+            style="@style/ButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minWidth="60dp"
+            android:minHeight="60dp"
+            android:paddingStart="@dimen/margin_content"
+            android:paddingEnd="@dimen/margin_content"
+            android:text="@string/start_official_test"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@id/tvOfficialTestInfo"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvOfficialTestInfo"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/info_unique_code_needed"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@id/btnApplicantLogin"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/btnStartOfficialTest" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnApplicantLogin"
+            style="@style/ButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:minWidth="60dp"
+            android:minHeight="60dp"
+            android:paddingStart="@dimen/margin_content"
+            android:paddingEnd="@dimen/margin_content"
+            android:text="@string/applicant_login"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toTopOf="@id/btnChangeLanguage"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/tvOfficialTestInfo" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnChangeLanguage"
+            style="@style/OutlinedButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:minWidth="60dp"
+            android:minHeight="60dp"
+            android:paddingStart="@dimen/margin_content"
+            android:paddingEnd="@dimen/margin_content"
+            android:text="@string/change_language"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/btnApplicantLogin" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

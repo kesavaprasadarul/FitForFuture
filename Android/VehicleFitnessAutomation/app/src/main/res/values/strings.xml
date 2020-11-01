@@ -1,0 +1,161 @@
+<resources>
+    <string name="app_name">Vehicle Fitness</string>
+    <string name="ok">OK</string>
+    <string name="loading">Loading…</string>
+    <string name="start_test">Start Test</string>
+    <string name="upload_documents">Upload the following documents</string>
+    <string name="upload">Upload</string>
+    <string name="validate_docs">Validate Documents</string>
+    <string name="number_plate">Number Plate</string>
+    <string name="chassis_number">Chassis Number</string>
+    <string name="pollution_cert">Pollution Certificate</string>
+    <string name="cancel">Cancel</string>
+    <string name="choose_image">"Choose an image "</string>
+    <string name="something_wrong">Something went wrong. Please try again.</string>
+    <string name="large_image_error_msg">Please choose an image with smaller size</string>
+    <string name="success">Success</string>
+    <string name="docs_verified">The documents verified successfully.</string>
+    <string name="error_upload_all_docs">Please upload all required documents.</string>
+    <string name="start_recording">Start Recording</string>
+    <string name="stop_recording">Stop Recording</string>
+    <string name="play">Play</string>
+    <string name="done">Done</string>
+    <string name="stop">Stop</string>
+    <string name="title_record_audio">Record Audio</string>
+    <string name="timer_default_0">00:00:00</string>
+    <string name="applicant_login">Applicant Self Test</string>
+    <string name="start_official_test">Start Official Test</string>
+    <string name="title_log_in">Log In</string>
+    <string name="info_unique_code_needed">Unique code is required for official login.</string>
+    <string-array name="array_pick_image">
+        <item>Gallery</item>
+        <item>Camera</item>
+    </string-array>
+    <string-array name="array_pick_audio">
+        <item>Gallery</item>
+        <item>Recorder</item>
+    </string-array>
+    <string-array name="array_languages" >
+        <item>English</item>
+        <item>हिंदी</item>
+    </string-array>
+
+    <string name="hint_enter_unique_code">Enter the Application Number from VAHAN Portal</string>
+    <string name="hint_enter_user_id">Enter user id</string>
+    <string name="hint_enter_password">Enter password</string>
+    <string name="button_text_login">Log In</string>
+    <string name="error_invalid_credentials">Invalid credentials entered. Please try again.</string>
+    <string name="title_choose_vehicle">Choose Vehicle</string>
+    <string name="description_vehicle_details">Vehicle Number-%s\nChassis Number-%s</string>
+    <string name="error_no_vehicle_selected">Please select one vehicle to proceed</string>
+    <string name="btn_text_continue">Continue</string>
+    <string name="info_choose_image_to_verify">Tap on the image to choose a photo to verify.</string>
+    <string name="info_choose_video_to_verify">Tap on the image to choose a video to verify.</string>
+    <string name="info_choose_audio_to_verify">Tap on the image to choose an audio to verify.</string>
+    <string name="verify">Verify</string>
+    <string name="vehicle_front_image">Front Image of Vehicle (Scratch and Dent test)</string>
+    <string name="vehicle_front_right_corner_image">Front Right Corner Image of Vehicle (Scratch and Dent test)</string>
+    <string name="vehicle_front_left_corner_image">Front Left Corner Image of Vehicle (Scratch and Dent test)</string>
+    <string name="vehicle_left_image">Left Image of Vehicle (Scratch and Dent test)</string>
+    <string name="vehicle_right_image">Right Image of Vehicle (Scratch and Dent test)</string>
+    <string name="vehicle_back_image">Back Image of Vehicle (Scratch and Dent test)</string>
+    <string name="vehicle_back_right_corner_image">Back Right Corner Image of Vehicle (Scratch and Dent test)</string>
+    <string name="vehicle_back_left_corner_image">Back Left Corner Image of Vehicle (Scratch and Dent test)</string>
+    <string name="vehicle_front_right_tyre">Front Right Tyre of Vehicle</string>
+    <string name="vehicle_front_left_tyre">Front Left Tyre of Vehicle</string>
+    <string name="vehicle_back_right_tyre">Back Right Tyre of Vehicle</string>
+    <string name="vehicle_back_left_tyre">Back Left Tyre of Vehicle</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="vehicle_engine_bay">Engine Bay</string>
+    <string name="hint_enter_vehicle_number">Enter Vehicle Number as per RC</string>
+    <string name="hint_enter_chassis_number">Enter Chassis Number as per RC</string>
+    <string name="hint_enter_email_id">Enter e-mail id</string>
+    <string name="error_invalid_input">Please provide valid input(s).</string>
+    <string name="title_vehicle_details">Vehicle Details</string>
+    <string name="title_vehicle_fitness_test">Vehicle Fitness Test</string>
+    <string name="head_lamp">Head Lamp</string>
+    <string name="break_light">Brake Light</string>
+    <string name="wiper">Wiper</string>
+    <string name="indicators">Indicators</string>
+    <string name="engine_start">Engine Start</string>
+    <string name="engine_idling">Engine Idling</string>
+    <string name="error_frame_extraction_failed">Failed to extract frames from the vide. Please try again.</string>
+    <string name="obd_test">OBD Test</string>
+    <string name="drive_test">Drive Test</string>
+    <string name="test_completed">Test Completed</string>
+    <string name="info_start_test">Start the test by tapping on the button below.</string>
+    <string name="info_generate_report">Generate the test report by tapping on the button below.</string>
+    <string name="generate_report">Generate Report</string>
+
+    <string name="report_title">Vehicle Fitness Test Report</string>
+    <string name="test_result_pass">PASS</string>
+    <string name="test_result_fail">FAIL</string>
+    <string name="title_report">Report</string>
+    <string name="report_saved">Report saved to your device.</string>
+
+    <string name="info_obd_test">In the OBD Test, following are checked:\n- Battery Voltage\n- Acc Pedal Plausibility and Stuck Check\n- Coolant Temperature\n- MIL status and running status in MIL\n- MAF\n- MAP\nPlease load a CSV file export from the OBD Module to begin tests.</string>
+    <string name="button_load_csv">Load CSV</string>
+    <string name="button_finish_test">Finish Test</string>
+    <string name="info_drive_test_start">Raise the speed to 15km/h - Press the below button when done</string>
+    <string name="info_drive_test_prepare">Please fill the following details and press Start button when you are ready for the test. \nNote: The drive must be longer than 2km to validate</string>
+    <string name="info_speedometer_test_failed">Speedometer Test Failed, deviation too high</string>
+    <string name="info_speedometer_test_passed">Speedometer Test Passed, increase speed around or slight higher than 30km/h and maintain constant speed. \n Press Ready when it is safe to brake fully.</string>
+    <string name="info_brake_test">You can now begin to brake fully. Press Pause in case it\'s not safe to brake suddenly to reset brake procedure.</string>
+    <string name="info_break_test_2">Increase speed around or slight higher than 30km/h and maintain constant speed. Press Ready when it is safe to brake fully.</string>
+    <string name="info_breaking_detected">Braking Detected, brake until vehicle completely stops.</string>
+    <string name="info_sequence_complete_processing">Sequence Complete, processing results</string>
+    <string name="info_break_test_failed">Braking Deceleration threshold not reached, Test failed.</string>
+    <string name="info_enter_odometer_reading">Enter Odometer Reading</string>
+    <string name="info_drive_test_all_pass">All Pass!</string>
+    <string name="info_drive_test_failed">Test Failed, too much odometer deviation with actual</string>
+    <string name="hint_current_odometer_reading">Enter current Odometer Reading (km)</string>
+    <string name="hint_speed_limiter_value">Enter Speed Limiter Value (km/h)</string>
+    <string name="button_start_drive_test">Start Drive Test</string>
+    <string name="button_ready_to_brake">Ready to Brake</string>
+    <string name="button_pause_braking_test">Pause Braking Test</string>
+    <string name="button_speed_reached">Speed Reached</string>
+    <string name="button_finish">Finish</string>
+    <string name="button_reset_sequence">Reset Sequence</string>
+    <string name="info_obd_test_acc_pedal_failed">Test failed while checking Acc Pedal Sensor Plausibility</string>
+    <string name="info_obd_test_coolant_check_failed"><![CDATA[Test failed while checking Coolant Temperature (>90°C)]]></string>
+    <string name="info_obd_test_mil_test_fail">Test failed while checking MIL</string>
+    <string name="info_obd_test_mil_distance_error">Test failed while checking MIL Distance</string>
+    <string name="info_obd_test_maf_value_error">Test failed while checking MAF value</string>
+    <string name="info_obd_test_map_value_error">Test failed while checking MAP Value</string>
+    <string name="info_obd_test_battery_voltage_fail">Test failed while checking Battery Voltage during Charging</string>
+    <string name="info_obd_test_acc_pedal_stuck_check_fail">Test failed while Acc Pedal Stuck Check</string>
+    <string name="info_obd_test_pass">All Tests Passed!</string>
+    <string name="choose_video">Choose Video</string>
+    <string name="change_language">Change App Language</string>
+    <string name="info_enter_manual_test_result">Please enter the result of manual test</string>
+    <string name="info_application_details" translatable="false">Application Number - %s\n\nApplication Date - %s\n\nRegistration Number - %s\n\nOwner Name - %s\n\nChassis Number - %s</string>
+    <string name="info_cert_line_1" translatable="false">Vehicle Number %s is certified as complying with provisions of the Motor Vehicle Act, 1988 and the rules made under.</string>
+    <string name="cert_sign_off" translatable="false">Signature of Inspecting Authority\nZONAL OFFICE, NORTH ZONE, MALL ROAD</string>
+    <string name="title_certificate" translatable="false">Certificate</string>
+    <string name="reflectors">Reflectors</string>
+    <string name="mirrors">Mirrors</string>
+    <string name="silencer">Silencer</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="steering_gear">Steering Gear</string>
+    <string name="priority_seating">Priority Seating</string>
+    <string name="horn">Horn</string>
+    <string name="result_message">Detected : %s\nExpected : %s\n%s</string>
+    <string name="polution_cert_valid">Pollution Certificate is valid.</string>
+    <string name="polution_cert_invalid">Pollution Certificate expired.</string>
+    <string name="vehicle_num_matched">Vehicle Numbers matched.</string>
+    <string name="vehicle_num_not_matched">Vehicle Numbers not matched.</string>
+    <string name="chassis_num_matched">Chassis Numbers matched.</string>
+    <string name="chassis_num_not_matched">Chassis Numbers not matched.</string>
+    <string name="result_poll_cert_message">Pollution Certificate\nDetected Expiry Date : %s\n\n%s</string>
+    <string name="bulbs">Bulbs</string>
+    <string name="glass_windshields">Glass/Windshields</string>
+    <string name="spark_plugs">Spark Plugs</string>
+    <string name="vehicle_color">Vehicle Color</string>
+    <string name="wheel_chair_entry">Wheel chair entry</string>
+    <string name="rear_under_run_protection">Rear under run protection</string>
+    <string name="lateral_side_protection">Lateral side protection</string>
+    <string name="view_certificate">View Certificate</string>
+    <string name="certificate_saved">Certificate saved to your device.</string>
+    <string name="ims_test"><![CDATA[Inspection & Maintenance Station Controlled Test(IMS)]]></string>
+    <string name="info_ims_test">Interface to IMS station controlled test, values will be used when IMS is linked or load input file from the test.\nTest will be functional after IMS link</string>
+</resources>
