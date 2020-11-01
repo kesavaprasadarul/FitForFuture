@@ -8,6 +8,14 @@ import androidx.fragment.app.FragmentManager
 import com.bosch.vaehiclefitness.R
 import kotlinx.android.synthetic.main.activity_main.*
 
+/*
+
+DESIGN ID:
+Feature Name:
+
+ */
+
+
 class MainActivity : AppCompatActivity() {
 
     private var currentFragment: Fragment? = null

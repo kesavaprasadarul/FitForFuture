@@ -8,6 +8,14 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+/*
+
+SRS: 2.3.1.1-c
+DESIGN ID: FR_VFT_001 (FRS-2.3.1.1)
+Feature Name: Application and Deployement
+
+ */
+
 class RetrofitApiClient private constructor() {
     companion object {
         private const val CONNECTION_TIME_OUT =  5 * 60L

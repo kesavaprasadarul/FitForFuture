@@ -23,6 +23,14 @@ import kotlinx.android.synthetic.main.item_manual_test.view.*
 import kotlinx.android.synthetic.main.item_upload_image.view.*
 import kotlinx.android.synthetic.main.item_with_button.view.*
 
+/*
+
+DESIGN ID:
+Feature Name:
+
+ */
+
+
 class TestStepAdapter(private val onItemClickListener: OnItemClickListener?) :
     ListAdapter<TestStep, RecyclerView.ViewHolder>(TestStep.DIFF_UTIL) {
 

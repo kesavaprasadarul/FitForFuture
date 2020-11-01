@@ -16,20 +16,20 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    signingConfigs {
-        release {
-            keyAlias pz_keyAlias
-            keyPassword pz_keyPassword
-            storeFile new File(pz_storeFile)
-            storePassword pz_storePassword
-        }
-    }
+//    signingConfigs {
+//        release {
+//            keyAlias pz_keyAlias
+//            keyPassword pz_keyPassword
+//            storeFile new File(pz_storeFile)
+//            storePassword pz_storePassword
+//        }
+//    }
 
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
         }
     }
 }

@@ -5,6 +5,14 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.bosch.vaehiclefitness.model.*
 
+/*
+
+DESIGN ID:
+Feature Name:
+
+ */
+
+
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 

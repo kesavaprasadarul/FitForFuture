@@ -20,6 +20,14 @@ import com.bosch.vaehiclefitness.util.Constants
 import kotlinx.android.synthetic.main.fragment_audio_recorder.*
 import java.io.IOException
 
+/*
+
+DESIGN ID:
+Feature Name:
+
+ */
+
+
 class AudioRecorderDialog : DialogFragment() {
 
     companion object {

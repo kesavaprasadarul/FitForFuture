@@ -8,6 +8,15 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.bosch.vaehiclefitness.R
 
+/*
+
+DESIGN ID:
+Feature Name:
+
+ */
+
+
+
 open class BaseFragment : Fragment() {
 
     protected lateinit var mLoader: ProgressDialog;

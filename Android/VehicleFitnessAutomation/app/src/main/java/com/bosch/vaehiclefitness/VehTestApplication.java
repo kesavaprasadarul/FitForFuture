@@ -4,12 +4,13 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
-/**
- * Copyright Robert Bosch GmbH.
- * <p>
- * All rights reserved, also regarding any disposal, exploration, reproduction, editing,
- * distribution, as well as in the event of applications for industrial property rights.
+/*
+
+DESIGN ID:
+Feature Name:
+
  */
+
 public class VehTestApplication extends Application {
 
     private static final String TAG = VehTestApplication.class.getSimpleName();

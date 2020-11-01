@@ -37,6 +37,14 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/*
+
+DESIGN ID:
+Feature Name:
+
+ */
+
+
 public class VehicleDriveTestActivity extends AppCompatActivity implements SensorEventListener, LocationListener {
 
     static double impulseWeight[] = new double[3];

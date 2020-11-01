@@ -12,6 +12,14 @@ import com.bosch.vaehiclefitness.R
 import com.bosch.vaehiclefitness.util.Constants.Companion.KEY_APP_LOCALE
 import kotlinx.android.synthetic.main.fragment_main.*
 
+/*
+
+DESIGN ID:
+Feature Name:
+
+ */
+
+
 
 class MainFragment : BaseFragment() {
 

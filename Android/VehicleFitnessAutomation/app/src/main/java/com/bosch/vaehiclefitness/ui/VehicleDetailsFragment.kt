@@ -8,6 +8,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.bosch.vaehiclefitness.R
 import kotlinx.android.synthetic.main.fragment_vehicle_details.*
 
+/*
+
+DESIGN ID:
+Feature Name:
+
+ */
+
+
 class VehicleDetailsFragment : BaseFragment() {
 
     private lateinit var mainViewModel: MainViewModel

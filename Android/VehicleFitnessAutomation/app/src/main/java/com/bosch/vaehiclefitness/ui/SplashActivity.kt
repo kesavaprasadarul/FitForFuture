@@ -13,6 +13,14 @@ import com.bosch.vaehiclefitness.R
 import com.bosch.vaehiclefitness.util.Constants
 import java.util.*
 
+/*
+
+DESIGN ID:
+Feature Name:
+
+ */
+
+
 class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -19,6 +19,14 @@ import java.io.InputStream;
 import java.util.HashSet;
 import java.util.List;
 
+/*
+
+DESIGN ID:
+Feature Name:
+
+ */
+
+
 public class OBDTestActivity extends AppCompatActivity {
 
     public final int ACCPEDAL_D_INDEX = 2,

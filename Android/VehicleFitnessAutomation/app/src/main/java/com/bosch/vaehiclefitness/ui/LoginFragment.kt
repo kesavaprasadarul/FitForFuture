@@ -19,12 +19,17 @@ import com.bosch.vaehiclefitness.util.Constants.Companion.DEMO_USER_ID
 import com.bosch.vaehiclefitness.util.SharedPreferenceUtil
 import kotlinx.android.synthetic.main.fragment_login.*
 
+/*
+
+SRS: 2.3.1.1-c
+DESIGN ID: FR_VFT_001 (FRS-2.3.1.1)
+Feature Name: Application and Deployement
+
+ */
+
+
 class LoginFragment : BaseFragment() {
 
-    companion object {
-        private val demoVehicleNumber = arrayListOf("KL13AJ6562", "KL55L2323")
-        private val demoChassisNumber = arrayListOf("MA3FSEB1S00376978", "MJ4LIOG1M00984785")
-    }
 
     private lateinit var mainViewModel: MainViewModel
 
@@ -126,5 +131,11 @@ class LoginFragment : BaseFragment() {
                     .show()
             })
     }
+
+    companion object {
+        private val demoVehicleNumber = arrayListOf("KL13AJ6562", "KL55L2323")
+        private val demoChassisNumber = arrayListOf("MA3FSEB1S00376978", "MJ4LIOG1M00984785")
+    }
+
 
 }

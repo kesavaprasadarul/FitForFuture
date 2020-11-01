@@ -7,6 +7,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bosch.vaehiclefitness.R
 import kotlinx.android.synthetic.main.item_certificate.view.*
 
+/*
+
+DESIGN ID:
+Feature Name:
+
+ */
+
+
 class CertificateAdapter(private val dataMap: HashMap<String, String>) :
     RecyclerView.Adapter<CertificateAdapter.ViewHolder>() {
 

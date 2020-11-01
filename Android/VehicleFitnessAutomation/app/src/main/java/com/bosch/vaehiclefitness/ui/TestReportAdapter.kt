@@ -9,6 +9,14 @@ import com.bosch.vaehiclefitness.R
 import com.bosch.vaehiclefitness.model.TestStep
 import kotlinx.android.synthetic.main.item_report.view.*
 
+/*
+
+DESIGN ID:
+Feature Name:
+
+ */
+
+
 class TestReportAdapter(private val testSteps: ArrayList<TestStep>?) :
     RecyclerView.Adapter<TestReportAdapter.ViewHolder>() {
 

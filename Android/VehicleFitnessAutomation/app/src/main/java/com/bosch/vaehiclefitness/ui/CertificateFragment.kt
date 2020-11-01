@@ -27,6 +27,16 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 import kotlin.collections.HashMap
 
+
+/*
+
+SRS: 2.3.1.6
+DESIGN ID: FR_VFT_005 (FRS-2.3.1.5)
+Feature Name: Digital Certificate
+
+ */
+
+
 class CertificateFragment : BaseFragment() {
 
     private lateinit var mainViewModel: MainViewModel
