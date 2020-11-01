@@ -1,13 +1,18 @@
 package com.bosch.vaehiclefitness.ui
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.location.Location
+import android.location.LocationListener
+import android.location.LocationManager
 import android.media.MediaMetadataRetriever
 import android.net.ParseException
 import android.net.Uri
@@ -17,7 +22,9 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bosch.vaehiclefitness.R
 import com.bosch.vaehiclefitness.model.*
@@ -42,15 +49,9 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 import kotlin.collections.ArrayList
 
-/*
 
-DESIGN ID:
-Feature Name:
-
- */
-
-
-class VehicleFitnessTestFragment : BaseFragment(), TestStepAdapter.OnItemClickListener {
+class VehicleFitnessTestFragment : BaseFragment(), TestStepAdapter.OnItemClickListener,
+    LocationListener {
 
     companion object {
         private const val REQUEST_CODE_IMAGE_GALLERY = 3000
@@ -73,6 +74,7 @@ class VehicleFitnessTestFragment : BaseFragment(), TestStepAdapter.OnItemClickLi
     private lateinit var testSteps: ArrayList<TestStep>
     private lateinit var testStepAdapter: TestStepAdapter
     private lateinit var mainViewModel: MainViewModel
+    private var locationManager: LocationManager? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -98,6 +100,7 @@ class VehicleFitnessTestFragment : BaseFragment(), TestStepAdapter.OnItemClickLi
         requestPermissions(permissions, REQUEST_CODE_PERMISSIONS)
     }
 
+    @SuppressLint("MissingPermission")
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
@@ -118,8 +121,18 @@ class VehicleFitnessTestFragment : BaseFragment(), TestStepAdapter.OnItemClickLi
         if (!permissionsAccepted) {
             showToast("Please grant required permissions.")
             parentFragmentManager.popBackStack()
+        } else {
+            // Location Init
+            locationManager =
+                activity?.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+            locationManager?.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0f, this)
+            val loc = getLastKnownLocation()
+            if (loc != null) {
+                showDistanceFromRTO(loc.latitude, loc.longitude)
+            }
         }
     }
+
 
     private fun initSteps() {
         testSteps = arrayListOf(
@@ -189,6 +202,7 @@ class VehicleFitnessTestFragment : BaseFragment(), TestStepAdapter.OnItemClickLi
             AudioTestStep(R.string.horn).apply {
                 url = "/api/horn_check"; responseKey = "horn_status"
             },
+            //FR_VFT_006 - Manual Tests
             ManualTestStep(R.string.reflectors),
             ManualTestStep(R.string.mirrors),
             ManualTestStep(R.string.silencer),
@@ -402,7 +416,7 @@ class VehicleFitnessTestFragment : BaseFragment(), TestStepAdapter.OnItemClickLi
             mainViewModel.verifyChassisNumber(testStep).observe(this, {
                 if (it != null) {
                     val vehicleFitness = mainViewModel.vehicleFitness
-                    val testResult = it.toUpperCase()
+                    val testResult = it.toUpperCase().replace("O", "0")
                         .contains(mainViewModel.vehicleFitness.chassisNumber.toUpperCase())
                     showAlertDialog(
                         null,
@@ -580,9 +594,9 @@ class VehicleFitnessTestFragment : BaseFragment(), TestStepAdapter.OnItemClickLi
     }
 
     private fun onAudioPickedFromGallery(audioFileUri: Uri?) {
-        var audioFilePath:String? = null
+        var audioFilePath: String? = null
         try {
-             audioFilePath = getRealPathFromAudioURI(audioFileUri)
+            audioFilePath = getRealPathFromAudioURI(audioFileUri)
             val retriever = MediaMetadataRetriever()
             retriever.setDataSource(audioFilePath)
             val duration: String? =
@@ -699,6 +713,70 @@ class VehicleFitnessTestFragment : BaseFragment(), TestStepAdapter.OnItemClickLi
             e.printStackTrace()
             return null
         }
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun getLastKnownLocation(): Location? {
+        val providers: List<String> = locationManager?.getProviders(true) ?: return null
+        var bestLocation: Location? = null
+        for (provider in providers) {
+            val l: Location = locationManager?.getLastKnownLocation(provider)
+                ?: return null
+            if (bestLocation == null || l.accuracy < bestLocation.accuracy) {
+                // Found best last known location: %s", l);
+                bestLocation = l
+            }
+        }
+        return bestLocation
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        locationManager?.removeUpdates(this)
+    }
+
+    //FR_VFT_03
+    private fun showDistanceFromRTO(currLat: Double, currLng: Double) {
+        val rtoLat = 11.016010
+        val rtoLng = 76.970310
+
+        val result = FloatArray(1)
+        Location.distanceBetween(currLat, currLng, rtoLat, rtoLng, result)
+        val status = result[0] < (3 * 1000)
+        tvLocationDetails?.apply {
+            text = getString(
+                R.string.info_rto_geo_fencing,
+                "$currLat,$currLng", "$rtoLat,$rtoLng", result[0].toString(),
+                if (status) "PASS" else "FAIL"
+            )
+            visibility = VISIBLE
+            setTextColor(
+                ContextCompat.getColor(
+                    context,
+                    if (status) android.R.color.holo_green_dark else android.R.color.holo_red_dark
+                )
+            )
+        }
+    }
+
+    override fun onLocationChanged(location: Location?) {
+        Log.d("Vishnu", "onLocationChanged $location")
+        location ?: return
+        val currLat = location.latitude
+        val currLng = location.longitude
+        showDistanceFromRTO(currLat, currLng)
+    }
+
+    override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
+        Log.d("Vishnu", "onStatusChanged")
+    }
+
+    override fun onProviderEnabled(provider: String?) {
+        Log.d("Vishnu", "onProviderEnabled")
+    }
+
+    override fun onProviderDisabled(provider: String?) {
+        Log.d("Vishnu", "onProviderDisabled")
     }
 
 }
