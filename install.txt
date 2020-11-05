@@ -1,0 +1,11 @@
+Install Instructions:
+
+Android App:
+Requires Android Studio 4+
+Build the project after gradle sync and deploy on the remote device.
+
+Web-Backend:
+1. Create two virtual environments using mkvirtualenv or similar based on current operating system (recommended linux)
+2. Use https://github.com/kesavaprasadarul/FitForFuture/tree/main/Web%20Backend/requirements.txt on both environments but install TF 1.x on one and TF2.0 on other. Respectively, the Keras platforms will change.
+3. Once both environments are ready, run "TheMRCNN.py" on the environment with TF1.x and "TheProtectedOne.py" on TF2.0. This could also be hosted on GUnicorn or Apache if required.
+4. In the server configuration, make sure the External IP is mapped to 0.0.0.0:5000 of the internal backend network.
