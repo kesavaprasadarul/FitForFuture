@@ -8,4 +8,4 @@ Web-Backend:
 1. Create two virtual environments using mkvirtualenv or similar based on current operating system (recommended linux)
 2. Use https://github.com/kesavaprasadarul/FitForFuture/tree/main/Web%20Backend/requirements.txt on both environments but install TF 1.x on one and TF2.0 on other. Respectively, the Keras platforms will change.
 3. Once both environments are ready, run "TheMRCNN.py" on the environment with TF1.x and "TheProtectedOne.py" on TF2.0. This could also be hosted on GUnicorn or Apache if required.
-4. In the server configuration, make sure the External IP is mapped to 0.0.0.0:5000 of the internal backend network.
+4. In the server configuration, make sure the External IP is mapped to 0.0.0.0:5000 of the internal backend network. This would be an highly independent configuration altogether based on the server on which the code is running. For Oracle, VCN mapping and IPTable configuration (available on Oracle Cloud Documentation, for ex. https://docs.cloud.oracle.com/en-us/iaas/developer-tutorials/tutorials/flask-on-ubuntu/01oci-ubuntu-flask-summary.htm) is sufficient.
