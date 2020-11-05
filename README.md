@@ -18,7 +18,7 @@ Requirements:
 - Android App: Android Studio > 4.0
 
 Execution:
-- Web Backend: Deploy TheProtectedOne.py and TheMRCNN.py files separately in two different environments. TheProtectedOne.py requires TF2.0 whereas TheMRCNN.py requires TF < 1.x and applicable Keras to that version.
+- Web Backend: Deploy TheProtectedOne.py and TheMRCNN.py files separately in two different environments. TheProtectedOne.py requires TF2.0 whereas TheMRCNN.py requires TF < 1.x and applicable Keras to that version. Any framework can be used to deploy the python file - GUnicorn+Nginx, Apache, or pure systemmd service is also sufficient. SSL execution is supported provided a signed (not self-signed) certificate is provided.
 - Android App: Use Android Studio to build and deploy the app in any Android Device running Android 9.0 or greater. Functions work best in Android 11.
 
 Documentation, Test Cases, FRS, SRS available in folder "/Documentation"
