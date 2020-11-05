@@ -1,0 +1,11 @@
+scikit-image
+pytesseract
+pillow
+opencv-python-headless
+dateparser
+tensorflow
+wave
+numpy
+pydub
+flask
+mrcnn
