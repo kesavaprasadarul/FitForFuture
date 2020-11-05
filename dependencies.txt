@@ -1,0 +1,4 @@
+Requirements:
+
+Web Backend: Available at "source/Web Backend"
+Android App: Android Studio > 4.0. Source available at source/Android
