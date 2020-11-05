@@ -1,6 +1,8 @@
 # FitForFuture
 Gov-TechThon 2020 - Team Fit for Future - VelFitTest-2
 
+> Ignore folder pythonenv3.8 - automatically generated
+
 Languages Used:
 
 - Java/Kotlin
