@@ -9,7 +9,7 @@ class Constants {
         const val DEMO_UNIQUE_ID = "abcd1234"
         const val DEMO_USER_ID = "rtoind"
         const val DEMO_PASSWORD = "123456"
-        const val DEMO_EMAIL_ID = "Renju.Kuriakose@in.bosch.com"
+        const val DEMO_EMAIL_ID = "email@domain.com"
 
         const val SUCCESS = "1"
         @JvmField
